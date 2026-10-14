@@ -1,0 +1,11 @@
+*.log
+.DS_Store
+*.docx
+*.zip
+sample_data/
+hse_old_ui/
+hse_old_ui_server_code.zip
+DEPLOYMENT.docx
+HSE_Workflow_Execution_Guide.docx
+# Local Android SDK configuration
+mobile/android/local.properties

@@ -1,0 +1,17 @@
+node_modules/
+android/.gradle/
+android/build/
+android/app/build/
+android/app/.cxx/
+android/app/debug.keystore
+android/app/hse-release.keystore
+android/keystore.properties
+android/*.apk
+android/gradle/wrapper/gradle-wrapper.jar
+ios/Pods/
+ios/build/
+*.log
+.DS_Store
+*.orig
+*.apk
+package-lock.json

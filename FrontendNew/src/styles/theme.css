@@ -1,0 +1,378 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-display: 'DM Sans', 'Inter', sans-serif;
+  --background: #ffffff;
+  --foreground: #0A0A0A;
+  --card: #ffffff;
+  --card-foreground: #0A0A0A;
+  --popover: #ffffff;
+  --popover-foreground: #0A0A0A;
+  --primary: #0B3D91;
+  --primary-foreground: #ffffff;
+  --secondary: #F3F7FF;
+  --secondary-foreground: #0A0A0A;
+  --muted: #F3F7FF;
+  --muted-foreground: #4A5568;
+  --accent: #1D4ED8;
+  --accent-foreground: #ffffff;
+  --destructive: #DC2626;
+  --destructive-foreground: #ffffff;
+  --border: #DBE7FF;
+  --input: #DBE7FF;
+  --input-background: #ffffff;
+  --switch-background: #cbced4;
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --ring: #1D4ED8;
+  --chart-1: #0B3D91;
+  --chart-2: #1D4ED8;
+  --chart-3: #60A5FA;
+  --chart-4: #F59E0B;
+  --chart-5: #DC2626;
+  --radius: 0.75rem;
+  --sidebar: #0A1630;
+  --sidebar-foreground: #AFC4EE;
+  --sidebar-primary: #0B3D91;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #11387D;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #1A2F57;
+  --sidebar-ring: #1D4ED8;
+}
+
+.dark {
+  --background: #070F21;
+  --foreground: #EEF4FF;
+  --card: #0D1933;
+  --card-foreground: #EEF4FF;
+  --popover: #0D1933;
+  --popover-foreground: #EEF4FF;
+  --primary: #1D4ED8;
+  --primary-foreground: #ffffff;
+  --secondary: #172846;
+  --secondary-foreground: #EEF4FF;
+  --muted: #172846;
+  --muted-foreground: #AFC4EE;
+  --accent: #1D4ED8;
+  --accent-foreground: #ffffff;
+  --destructive: #DC2626;
+  --destructive-foreground: #ffffff;
+  --border: #1E3663;
+  --input: #1E3663;
+  --input-background: #132647;
+  --ring: #1D4ED8;
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --chart-1: #1D4ED8;
+  --chart-2: #3B82F6;
+  --chart-3: #93C5FD;
+  --chart-4: #F59E0B;
+  --chart-5: #DC2626;
+  --sidebar: #050C1B;
+  --sidebar-foreground: #AFC4EE;
+  --sidebar-primary: #1D4ED8;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #11387D;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #1A2F57;
+  --sidebar-ring: #1D4ED8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  #root {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 1.18rem + 0.8vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: #0A0A0A;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 0.97rem + 0.45vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.4;
+    color: #0A0A0A;
+  }
+
+  h3 {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #0A0A0A;
+  }
+
+  h4 {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #0A0A0A;
+  }
+
+  label {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  button {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+  }
+
+  img,
+  svg,
+  canvas,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Custom Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F3F7FF;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #BFDBFE;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1D4ED8;
+  }
+
+  /* Firefox scrollbar */
+  html,
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: #BFDBFE #F3F7FF;
+  }
+
+  @media (max-width: 640px) {
+    input,
+    textarea,
+    select {
+      /* Prevent iOS auto-zoom when form controls receive focus */
+      font-size: 16px;
+    }
+  }
+}
+
+@layer utilities {
+  /* Global text size normalization for arbitrary Tailwind font-size classes used across pages */
+  .text-xs {
+    font-size: 12px !important;
+  }
+
+  .text-2xl {
+    font-size: clamp(1.2rem, 2vw, 1.45rem) !important;
+  }
+
+  .text-3xl {
+    font-size: clamp(1.35rem, 2.4vw, 1.65rem) !important;
+  }
+
+  .text-4xl,
+  .text-5xl,
+  .text-6xl {
+    font-size: clamp(1.6rem, 3vw, 2rem) !important;
+  }
+
+  .text-\[9px\],
+  .text-\[10px\],
+  .text-\[11px\] {
+    font-size: 12px !important;
+  }
+
+  .text-\[12px\] {
+    font-size: 13px !important;
+  }
+
+  .text-\[13px\] {
+    font-size: 14px !important;
+  }
+
+  .text-\[18px\],
+  .text-\[20px\] {
+    font-size: clamp(1rem, 1.7vw, 1.125rem) !important;
+  }
+
+  .text-\[24px\],
+  .text-\[26px\],
+  .text-\[28px\] {
+    font-size: clamp(1.2rem, 2.2vw, 1.5rem) !important;
+  }
+
+  .text-\[36px\],
+  .text-\[38px\],
+  .text-\[40px\],
+  .text-\[42px\],
+  .text-\[44px\] {
+    font-size: clamp(1.8rem, 3.5vw, 2.2rem) !important;
+  }
+
+  .text-\[52px\],
+  .text-\[54px\] {
+    font-size: clamp(2rem, 4.2vw, 2.5rem) !important;
+  }
+
+  /* Also normalize inline font-size styles used directly in JSX style objects across pages */
+  [style*="font-size:9px"],
+  [style*="font-size: 9px"],
+  [style*="font-size:10px"],
+  [style*="font-size: 10px"],
+  [style*="font-size:11px"],
+  [style*="font-size: 11px"] {
+    font-size: 12px !important;
+  }
+
+  [style*="font-size:12px"],
+  [style*="font-size: 12px"] {
+    font-size: 13px !important;
+  }
+
+  [style*="font-size:13px"],
+  [style*="font-size: 13px"] {
+    font-size: 14px !important;
+  }
+
+  [style*="font-size:18px"],
+  [style*="font-size: 18px"],
+  [style*="font-size:20px"],
+  [style*="font-size: 20px"] {
+    font-size: clamp(1rem, 1.7vw, 1.125rem) !important;
+  }
+
+  [style*="font-size:24px"],
+  [style*="font-size: 24px"],
+  [style*="font-size:26px"],
+  [style*="font-size: 26px"],
+  [style*="font-size:28px"],
+  [style*="font-size: 28px"] {
+    font-size: clamp(1.2rem, 2.2vw, 1.5rem) !important;
+  }
+
+  [style*="font-size:36px"],
+  [style*="font-size: 36px"],
+  [style*="font-size:38px"],
+  [style*="font-size: 38px"],
+  [style*="font-size:40px"],
+  [style*="font-size: 40px"],
+  [style*="font-size:42px"],
+  [style*="font-size: 42px"],
+  [style*="font-size:44px"],
+  [style*="font-size: 44px"] {
+    font-size: clamp(1.8rem, 3.5vw, 2.2rem) !important;
+  }
+
+  [style*="font-size:52px"],
+  [style*="font-size: 52px"],
+  [style*="font-size:54px"],
+  [style*="font-size: 54px"],
+  [style*="font-size:56px"],
+  [style*="font-size: 56px"] {
+    font-size: clamp(2rem, 4.2vw, 2.5rem) !important;
+  }
+}
